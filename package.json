@@ -17,9 +17,6 @@
   },
   "homepage": "https://github.com/chandrakumarreddy/M101JS#readme",
   "dependencies": {
-    "consolidate": "^0.15.1",
-    "express": "^4.16.3",
-    "mongoose": "^5.0.14",
-    "mongodb": "^2.2.33"
+    "express": "^4.16.3"
   }
 }
