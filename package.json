@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/chandrakumarreddy/M101JS#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "consolidate": "^0.15.1",
+    "express": "^4.16.3",
+    "nunjucks": "^3.1.2"
   }
 }
