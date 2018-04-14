@@ -5,16 +5,22 @@
         <title>
             Imdb copy
         </title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
     <body>
         <h1>
-            Hello {{ name }}.welcome to indias biggest show.
+            Pick one of your favourite fruit
         </h1>
-        <ul>
-            <li>
-                {{ getval1 }}
-            </li>
-        </ul>
+        <form action="/fav_fruit" method="post">
+            {% for fruit in fruits%}
+            <label>
+                <input type="radio" name='fruit' value='{{ fruit }}'/>
+                {{ fruit }}
+            </label>
+            <br/>
+            {% endfor %}
+            <button type="submit">
+                send
+            </button>
+        </form>
     </body>
 </html>

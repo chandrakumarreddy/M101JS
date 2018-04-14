@@ -2,6 +2,7 @@ const express = require('express'),
     app = express(),
     cons = require('consolidate'),
     assert = require('assert'),
+    bodyParser = require('body-parser'),
     MongoClient = require('mongodb').MongoClient;
 ///////
 ///middleware 
@@ -9,14 +10,27 @@ const express = require('express'),
 app.engine('html', cons.nunjucks);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 ///////////
 ///routes
 //////////
-app.get('/:name', function(req, res) {
+app.get('/', function(req, res) {
+    let fruits = ['apple', 'orange', 'mango', 'straberry'];
     res.render('home', {
-        'name': req.params.name,
-        'getval1': req.query.getval1
+        'fruits': fruits
     });
+});
+app.post('/fav_fruit', function(req, res) {
+    let fruit = req.body.fruit;
+    if (typeof fruit == 'undefined') {
+        res.send("please select one fruit");
+    } else {
+        res.render('favFruit', {
+            'fruit': fruit
+        });
+    }
 });
 /////////
 ///listening to connection
