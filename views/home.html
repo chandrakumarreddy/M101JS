@@ -9,21 +9,12 @@
     </head>
     <body>
         <h1>
-            Movies show
+            Hello {{ name }}.welcome to indias biggest show.
         </h1>
         <ul>
-            {% for movie in movies %}
             <li>
-                <a href="https://www.google.com">
-                    {{ movie.title }}
-                </a>
-                -released in {{ movie.year }}
+                {{ getval1 }}
             </li>
-            {% else %}
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus enim impedit maiores veritatis corrupti blanditiis molestias, hic illum architecto doloremque ad nostrum necessitatibus. Voluptatibus et aliquid est vitae dolor quia.
-            </p>
-            {% endfor %}
         </ul>
     </body>
 </html>
