@@ -5,22 +5,44 @@
         <title>
             Imdb copy
         </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+        <style type="text/css">
+        	body{
+        		font-family: 'Roboto', sans-serif;
+        	}
+        	.thumbnail{
+        		padding:0;
+        	}
+        </style>
     </head>
     <body>
-        <h1>
-            Pick one of your favourite fruit
-        </h1>
-        <form action="/fav_fruit" method="post">
-            {% for fruit in fruits%}
-            <label>
-                <input type="radio" name='fruit' value='{{ fruit }}'/>
-                {{ fruit }}
-            </label>
-            <br/>
-            {% endfor %}
-            <button type="submit">
-                send
-            </button>
-        </form>
+        <div class="container">
+            <div class="jumbotron">
+                <h3>
+                    Welcome to FMDB
+                </h3>
+                <a href="/addMovie" class="btn btn-primary btn-md text-right">
+                    add movie
+                </a>
+            </div>
+            <div class="row text-center">
+                {% for movie in movies%}
+                <div class="col-md-3 col-sm-4">
+                    <div class="thumbnail">
+                        <img src="{{ movie.src }}"/>
+                        <div class="caption">
+                            <p>
+                                {{ movie.title }}
+                            </p>
+                            <button class="btn btn-primary btn-xs">
+                                view
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </body>
 </html>

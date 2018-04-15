@@ -16,21 +16,23 @@ app.use(bodyParser.urlencoded({
 ///////////
 ///routes
 //////////
+let movies = [];
 app.get('/', function(req, res) {
-    let fruits = ['apple', 'orange', 'mango', 'straberry'];
     res.render('home', {
-        'fruits': fruits
+        "movies": movies
     });
 });
-app.post('/fav_fruit', function(req, res) {
-    let fruit = req.body.fruit;
-    if (typeof fruit == 'undefined') {
-        res.send("please select one fruit");
-    } else {
-        res.render('favFruit', {
-            'fruit': fruit
-        });
-    }
+app.get('/addMovie', function(req, res) {
+    res.render('addmovie');
+});
+app.post('/addMovie', function(req, res) {
+    let movie = {
+        "title": req.body.title,
+        "src": req.body.src,
+        "description": req.body.description
+    };
+    movies.push(movie);
+    res.redirect('/');
 });
 /////////
 ///listening to connection

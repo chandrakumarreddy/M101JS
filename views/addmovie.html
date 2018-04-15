@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>
+            FMDB|addMovie
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+        <style type="text/css">
+        	body{
+        		font-family: 'Roboto', sans-serif;
+        	}
+        	form{
+        		width: 30%;
+        		margin:100px auto;
+        	}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form action="/addMovie" method="post">
+                <div class="form-group">
+                    <input type="text" name="title" placeholder="movie title" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="src" placeholder="movie source link" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="description" placeholder="description" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Done
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
